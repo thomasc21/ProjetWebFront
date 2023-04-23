@@ -1,0 +1,20 @@
+{
+  "name": "projetwebfront",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"npx http-server . -p 4000 \"http:localhost:4000?\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomasc21/ProjetWebFront.git"
+  },
+  "author": "thomasc21",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thomasc21/ProjetWebFront/issues"
+  },
+  "homepage": "https://github.com/thomasc21/ProjetWebFront#readme"
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<title>Auberge de Peillon</title>
+	<link rel="stylesheet" type="text/css" href="./style/SiteHotel.css">
+</head>
+<body>
+	<h1>Réserver</h1>
+	<nav>
+		<ul>
+			<li><a href="index.html">Accueil</a></li>
+			<li><a href="chambres.html">Nos chambres</a></li>
+			<li><a href="reservations.html" class="navReservation">Réserver</a></li>
+			<li><a href="velo.html">Nos vélos</a></li>
+			<li><a href="contact.html">Nous retrouver</a></li>
+		</ul>
+	</nav>
+	<form action="contact@aubergedepeillon.fr">
+		<Fieldset>
+			<label for="monsieur">Monsieur</label>
+			<input type="radio" id="monsieur" name="genre" value="monsieur">
+			<label for="madame">Madame</label>
+			<input type="radio" id="madame" name="genre" value="madame">
+			<p> 
+				<label for="nom">Nom</label>
+				<input type="text" id="nom" name="Nom de famille" required>
+				<label for="prenom">Prénom</label>
+				<input type="text" id="prenom" name="Prenom">
+			</p>
+			<p> 
+				<label for="email">Mail</label>
+				<input type="email" id="email" name="Email" required>
+				<label for="tel">Téléphone</label>
+				<input type="tel" id="tel" name="Téléphone" placeholder="Sans point, ni espaces" required>
+			</p>
+			<select id="non_chambres" name="nom_chambres">
+				<option value="la_calade">La Calade</option>
+				<option value="les_lucioles">Les Lucioles</option>
+				<option value="les_myrtes">Les Myrtes</option>
+				<option value="la_fontaine">La Fontaine</option>
+				<option value="les_oliviers">Les Oliviers</option>
+			</select>
+			<p>
+				<label for="date_arrivée">Date d'arrivée</label>
+				<input type="date" id="date_arrivée" name="Date d'arrivée" required>
+				<label for="date_départ">Date de départ</label>
+				<input type="date" id="date_départ" name="Date de départ" required>
+			</p>
+			<p>
+				<label for="nb_personnes">Nombre de personnes</label>
+				<input type="number" id="nb_personnes" name="Nombre de personnes" min="1" max="4">
+			</p>
+			<p>
+				<label for="nb_dejeuner">Nombre de petits déjeuner</label>
+				<input type="number" id="nb_dejeuner" name="Nombre de petits déjeuner" min="0" max="4">
+			</p>
+			<p>
+				<label for="parking">Parking</label>
+				<input type="checkbox" id="parking" name="parking">
+			</p>
+			<p>
+				<label for="commentaires">Commentaires:</label>
+				<br>
+				<textarea id="commentaires" name="Commentaires" placeholder="Vous pouvez nous laisser ici un message"></textarea>
+			</p>		
+			<p>
+				<input type="checkbox" id="politique_confindentialité" name="politique de confindentialité" required>
+				En cochant cette case, vous acceptez notre <a href="confidencialité.html">politique de confidencialité</a>
+			</p>
+			<p>
+				<input type="submit" value="Valider">
+			</p>
+		</Fieldset>
+	</form>	
+	<nav>
+		<ul>
+			<li><a href="legal.html">Mentions légales</a></li>
+			<li><a href="confidentialite.html">Politique de confidentialité</a></li>
+		</ul>
+	</nav>
+
+</body>
+</html>

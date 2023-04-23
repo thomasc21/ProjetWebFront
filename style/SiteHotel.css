@@ -1,0 +1,154 @@
+body{
+    background-color: whitesmoke;
+    font-family: Tahoma, Geneva, sans-Serif;
+    padding: 15px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+h1{
+    margin: 20px;
+    text-align: center;
+    font-size: 200%;
+    color: firebrick;
+    margin-bottom: 0px;
+}
+
+h2{
+    border:solid indianred;
+    font-size: 150%;
+    color: indianred;
+}
+
+h3{
+    color: indianred;
+    font-size: 120%;
+    text-indent: 10px;
+}
+
+sub_h1{
+    text-align: center;
+    color: #8C0000;
+    font-style: italic;
+    font-size: 160%;
+    margin: 20%;
+}
+
+a:link{
+    color: firebrick;
+}
+
+a:visited{
+    color: salmon;
+}
+
+p{
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+}
+
+#auberge_accueil{
+    width: 100%;
+    height: auto;
+}
+
+nav{
+    background-color: darkred;
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    z-index: 10;
+    
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+}
+
+nav a:visited{
+    color: whitesmoke;
+}
+
+nav a:hover{
+    font-weight: bold;
+    text-decoration: solid;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+nav ul li{
+    margin-right: 20px;
+    margin-left: 20px;
+} 
+
+nav:first-of-type{
+    top: 0px;
+}
+
+nav:last-of-type{
+    bottom: 0px;
+}
+
+.navChambre{
+    border-bottom: 2px solid whitesmoke;
+    font-weight: bold;
+}
+
+.navConfidentialite{
+    border-bottom: 2px solid whitesmoke;
+    font-weight: bold;
+}
+
+.navContact{
+    border-bottom: 2px solid whitesmoke;
+    font-weight: bold;
+}
+
+.navIndex{
+    border-bottom: 2px solid whitesmoke;
+    font-weight: bold;
+}
+
+.navLegal{
+    border-bottom: 2px solid whitesmoke;
+    font-weight: bold;
+}
+
+.navReservation{
+    border-bottom: 2px solid whitesmoke;
+    font-weight: bold;
+}
+
+table th,td,tr{
+    border-collapse: collapse;
+    border: solid black 1px;
+}
+
+th{
+    background-color: indianred;
+    color: white;
+}
+
+td{
+    padding: 10px;
+    background-color: white;
+}
+
+table{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input{
+    margin:8px;
+}
+
+input[required]{
+    font-weight: bold;
+}
