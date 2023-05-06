@@ -129,6 +129,11 @@ nav:last-of-type{
     font-weight: bold;
 }
 
+.navConnexion{
+    border-bottom: 2px solid whitesmoke;
+    font-weight: bold;
+}
+
 table th,td,tr{
     border-collapse: collapse;
     border: solid black 1px;

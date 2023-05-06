@@ -14,9 +14,10 @@
 			<li><a href="velo.html">Nos vélos</a></li>
 			<li><a href="reservations.html">Réserver</a></li>
 			<li><a href="contact.html">Nous retrouver</a></li>
+			<li><a href="login.html"> Connexion</a> </li>
 		</ul>
 	</nav>	
-	<div>
+	<!--<div>
 		<table>
 			<tdr>
 				<th>Nom</th>
@@ -48,7 +49,11 @@
 			</tr>
 
 		</table>
+	</div> -->
+	<div class="tableauChambre">
+
 	</div>
+
 	<nav>
 		<ul>
 			<li><a href="legal.html">Mentions légales</a></li>
@@ -56,4 +61,14 @@
 		</ul>
 	</nav>
 </body>
+<script>
+	const element = document.querySelector('.tableauChambre');
+	fetch('http://localhost:8000/user')
+	.then(response => response.json())
+	.then(data => {
+		data.forEach(post => {
+			element.insertAdjacentHTML('beforeend', `<p>${post.idusers}</p>`);
+		});
+	});
+</script>
 </html>
