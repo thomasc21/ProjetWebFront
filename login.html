@@ -16,7 +16,17 @@
             <li><a href="login.html" class="navConnexion"> Connexion </a></li>
 		</ul>
 	</nav>	
-	
+	<form method="POST" >
+		<fieldset>
+		  <legend>Connexion</legend>
+		  <label for="login">Login</label>
+		  <input type="email" name="login" id="idusers" required>
+		  <label for="password">Mot de passe</label>
+		  <input type="text" name="password" id="password" required>
+		  <button type="submit" class="envoyers">Se connecter</button>
+		  <a href="inscription.html">S'inscrire</a>
+		</fieldset>
+	  </form>
 	<nav>
 		<ul>
 			<li><a href="legal.html">Mentions légales</a></li>
@@ -24,4 +34,93 @@
 		</ul>
 	</nav>
 </body>
+<script>
+  const form = document.querySelector('form');
+  const emailInput = document.getElementById('idusers');
+  const passwordInput = document.getElementById('password');
+  
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+    formData.append('email', emailInput.value);
+    formData.append('password', passwordInput.value);
+    
+    fetch('http://localhost:8000/user/login', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
+      if (response.ok) {
+        // Login successful, redirect to home page or dashboard
+        window.location.href = 'index.html';
+      } else {
+        // Login failed, show error message
+        alert('Login failed, please check your email and password.');
+      }
+    })
+    .catch(error => {
+      console.error('Error logging in:', error);
+      alert('An error occurred while logging in.');
+    });
+  });
+
+
+/*
+	
+	const form = document.querySelector('form');
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    fetch('http://localhost:8000/user/login', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error('Erreur lors de la requête.');
+        }
+    })
+    .then(data => {
+        console.log(data);
+        window.location.href = '/dashboard.html';
+    })
+    .catch(error => {
+        console.error(error);
+    });
+});
+
+
+button.addEventListener('click', (event) => {
+		const button = document.querySelector('.envoyers');
+		const idusers = document.querySelector('#idusers').value;
+		const password = document.querySelector('#password').value;
+		console.log(idusers);
+		event.preventDefault();
+		postData('http://localhost:8000/user/login', { idusers, password })
+			.then((data) => {
+				console.log(data); // JSON data parsed by `data.json()` call
+			});
+	});
+	
+
+	async function postData(url = "", data = {}) {
+    // Default options are marked with *
+    const response = await fetch(url, {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      mode: "cors", // no-cors, *cors, same-origin
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: "same-origin", // include, *same-origin, omit
+      headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      redirect: "follow", // manual, *follow, error
+      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+      body: JSON.stringify(data), // body data type must match "Content-Type" header
+    });
+    return response.json(); // parses JSON response into native JavaScript objects
+  }*/
+</script>
 </html>
