@@ -51,7 +51,13 @@
 		</table>
 	</div> -->
 	<div class="tableauChambre">
-
+		<table>
+			<tr class="EnteteTableau">
+				<th>Nom</th>
+				<th>Type de chambre</th>
+				<th>Prix par nuit</th>
+			</tr>
+		</table>
 	</div>
 
 	<nav>
@@ -62,12 +68,13 @@
 	</nav>
 </body>
 <script>
-	const element = document.querySelector('.tableauChambre');
-	fetch('http://localhost:8000/user')
+	const element = document.querySelector('.EnteteTableau');
+	fetch('http://localhost:8000/chambre')
 	.then(response => response.json())
 	.then(data => {
 		data.forEach(post => {
-			element.insertAdjacentHTML('beforeend', `<p>${post.idusers}</p>`);
+			element.insertAdjacentHTML('afterend', `<tr> <td>${post.NomChambre}</td> <td>${post.TypeChambre}</td> <td>${post.PrixChambre}</td> </tr>`);
+	
 		});
 	});
 </script>
