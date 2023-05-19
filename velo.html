@@ -12,19 +12,32 @@
 			<li><a href="index.html">Accueil</a></li>
 			<li><a href="chambres.html">Nos chambres</a></li>
 			<li><a href="velo.html" class="navVelo">Nos vélos</a></li>
-			<li><a href="reservations.html">Réserver</a></li>
+			<li id = "lien-nav" ><a href="reservations.html">Réserver</a></li>
 			<li><a href="contact.html">Nous retrouver</a></li>
-			<li><a href="login.html"> Connexion</a></li>
+			<li id="connexion"><a href="login.html"> Connexion </a></li>
+			<li id="deconnexion"><a href="logout.html"> Déconnexion </a></li>
 		</ul>
 	</nav>	
 		<div class="tableauVelo">
 			<table>
-				<tr class="EnteteTableau">
+				<tr class="EnteteTableauVelo">
 					<th>Type de vélo</th>
 					<th>Prix par jour</th>
 				</tr>
 			</table>
 		</div>
+		<script>
+		//---------- get velo --------------------------
+		const element = document.querySelector('.EnteteTableauVelo');
+			fetch('http://localhost:8000/velo')
+			.then(response => response.json())
+			.then(data => {
+				data.forEach(post => {
+					element.insertAdjacentHTML('afterend', `<tr> <td>${post.NomVelo}</td> <td>${post.PrixVelo}</td> </tr>`);
+			
+				});
+			});
+		</script>
 	<nav>
 		<ul>
 			<li><a href="legal.html">Mentions légales</a></li>
@@ -32,15 +45,5 @@
 		</ul>
 	</nav>
 </body>
-<script>
-	const element = document.querySelector('.EnteteTableau');
-	fetch('http://localhost:8000/velo')
-	.then(response => response.json())
-	.then(data => {
-		data.forEach(post => {
-			element.insertAdjacentHTML('afterend', `<tr> <td>${post.NomVelo}</td> <td>${post.PrixVelo}</td> </tr>`);
-	
-		});
-	});
-</script>
+<script src="./js/myScript.js"></script>
 </html>

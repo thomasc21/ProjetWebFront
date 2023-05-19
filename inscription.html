@@ -11,9 +11,10 @@
 			<li><a href="index.html">Accueil</a></li>
 			<li><a href="chambres.html">Nos chambres</a></li>
 			<li><a href="velo.html">Nos vélos</a></li>
-			<li><a href="reservations.html">Réserver</a></li>
+			<li id = "lien-nav"><a href="reservations.html">Réserver</a></li>
 			<li><a href="contact.html">Nous retrouver</a></li>
-            <li><a href="login.html" class="navConnexion"> Connexion </a></li>
+			<li id="connexion" ><a href="login.html"  class="navConnexion"> Connexion</a> </li>
+			<li id="deconnexion"><a href="logout.html" > Déconnexion </a></li>
 		</ul>
 	</nav>	
     <form>
@@ -36,35 +37,5 @@
 		</ul>
 	</nav>
 </body>
-<script>
-  function inscription (form) {
-  var idusers = form.idusers.value;
-  var password = form.password.value;
-  var passwordValidate = form.passwordValidate.value;
-  console.log(idusers);
-  console.log(password);
-  console.log (passwordValidate);
-    if (password != passwordValidate) {
-        alert("Les mots de passe ne correspondent pas");
-        return;
-    }
-    else{
-        fetch("http://localhost:8000/user/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({"idusers": idusers, "password": password}),
-    }).then((response) => response.text())
-        .then((responseText) => {
-            alert(responseText);
-        })
-        .catch((error) => {
-            console.error("foo: " + error)
-        })
-        window.location.href = "login.html";
-    }
-}
-
-</script>
+<script src="./js/myScript.js" ></script>
 </html>

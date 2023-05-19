@@ -162,3 +162,7 @@ input{
 input[required]{
     font-weight: bold;
 }
+
+.visible {
+    display: block;
+  }

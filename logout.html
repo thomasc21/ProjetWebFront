@@ -13,21 +13,18 @@
 			<li><a href="velo.html">Nos vélos</a></li>
 			<li  id = "lien-nav" ><a href="reservations.html">Réserver</a></li>
 			<li><a href="contact.html">Nous retrouver</a></li>
-            <li id="connexion"><a href="login.html" class="navConnexion" > Connexion </a></li>
-			<li id="deconnexion"><a href="logout.html"> Déconnexion </a></li>
+			<li id="connexion"><a href="login.html" class="navConnexion" > Connexion </a></li>
+			<li id="deconnexion"><a href="logout.html" class="navConnexion"> Déconnexion </a></li>
 		</ul>
 	</nav>	
-	<form >
-		<fieldset>
-		  <legend>Connexion</legend>
-		  <label for="login">Login</label>
-		  <input type="email" name="login" id="idusers" required>
-		  <label for="password">Mot de passe</label>
-		  <input type="text" name="password" id="password" required>
-		  <input type="button" value="Envoyer" class="envoyers" onclick="Authentification(this.form)">
-		  <a href="inscription.html">S'inscrire</a>
-		</fieldset>
-	  </form>
+	<h1> Vos réservation </h1>
+	<div id="reservations">
+
+	</div>
+	<script>
+		
+	</script>
+	<button id="deconnexionButton" onclick="deconnexion()">Déconnexion</button>
 	<nav>
 		<ul>
 			<li><a href="legal.html">Mentions légales</a></li>
@@ -35,5 +32,5 @@
 		</ul>
 	</nav>
 </body>
-<script src="./js/myScript.js" ></script>
+<script src="./js/myScript.js"></script>
 </html>
