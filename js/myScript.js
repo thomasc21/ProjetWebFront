@@ -33,7 +33,6 @@ function inscription (form) {
     var idusers = form.idusers.value;
     var password = form.password.value;
     var passwordValidate = form.passwordValidate.value;
-    var passwordHash = bcrypt.hashSync(password, 10);
     //console.log(idusers);
     //console.log(password);
     //console.log (passwordValidate);
@@ -47,7 +46,7 @@ function inscription (form) {
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({"idusers": idusers, "password": passwordHash}),
+          body: JSON.stringify({"idusers": idusers, "password": password}),
       }).then((response) => response.text())
           .then((responseText) => {
               alert(responseText);
@@ -66,7 +65,7 @@ function inscription (form) {
 function Authentification (form) {
     var idusers = form.idusers.value;
     var password = form.password.value;
-    var passwordHash = bcrypt.hashSync(password, 10);
+   // var passwordHash = bcrypt.hashSync(password, 10);
     //console.log(idusers);
     //console.log(password);
       fetch("http://localhost:8000/user/login", {
@@ -74,7 +73,7 @@ function Authentification (form) {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({"idusers": idusers, "password": passwordHash}),
+      body: JSON.stringify({"idusers": idusers, "password": password}),
   }).then((response) => {
       if (response.ok) {
           return response.text();
@@ -89,7 +88,11 @@ function Authentification (form) {
       if (localStorage.getItem("token") !== null) {
           localStorage.removeItem("token");
       }
+    //   if(localStorage.getItem("idusers") !== null){
+    //         localStorage.removeItem("idusers");
+    //   } 
       localStorage.setItem("token", token);
+     // localStorage.setItem("idusers", idusers);
   
       window.location = "http://localhost:4000/index.html";
     })
@@ -125,4 +128,35 @@ function Authentification (form) {
 function deconnexion(){
     localStorage.removeItem('token');
     window.location.href = "index.html";
+}
+
+function reservationChambre(form){
+    const nom = form.nom.value
+    const prenom = form.prenom.value
+    const email = form.email.value
+    const tel = form.tel.value
+    const nomChambre = form.non_chambres.value
+    console.log(nomChambre);
+    const date = form.date_arrivée.value
+    const nb_personnes = form.nb_personnes.value
+    //console.log(nom);
+    fetch("http://localhost:8000/reservationChambre/add", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + localStorage.getItem("token")
+
+        },
+        body: JSON.stringify({"nom": nom, "prenom": prenom, "email": email, "tel": tel, "NomChambre": nomChambre, "date": date, "nb_personnes": nb_personnes}),
+    }).then((response) => response.text())
+        .then((responseText) => {
+            alert(responseText);
+            window.location.href = "index.html";
+        }
+        )
+        .catch((error) => {
+            console.error("foo: " + error)
+        }
+        )
+
 }
