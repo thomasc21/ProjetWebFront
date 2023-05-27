@@ -98,6 +98,7 @@ function Authentification (form) {
     })
     .catch((error) => {
       console.error("foo: " + error)
+      alert("Erreur de login");
     })
   }
 
@@ -138,7 +139,7 @@ function reservationChambre(form){
     const nomChambre = form.non_chambres.value
     console.log(nomChambre);
     const date = form.date_arrivée.value
-    const nb_personnes = form.nb_personnes.value
+    const nb_personnes = form.nb_personnes.value    
     //console.log(nom);
     fetch("http://localhost:8000/reservationChambre/add", {
         method: "POST",
@@ -150,8 +151,10 @@ function reservationChambre(form){
         body: JSON.stringify({"nom": nom, "prenom": prenom, "email": email, "tel": tel, "NomChambre": nomChambre, "date": date, "nb_personnes": nb_personnes}),
     }).then((response) => response.text())
         .then((responseText) => {
-            alert(responseText);
-            window.location.href = "index.html";
+            alert("Votre réservation a bien été prise en compte");
+            window.location = "http://localhost:4000/index.html";
+
+           
         }
         )
         .catch((error) => {
@@ -159,4 +162,20 @@ function reservationChambre(form){
         }
         )
 
+}
+
+function checkValue(form){
+    const date = form.date_arrivée.value
+    const nb_personnes = form.nb_personnes.value
+    const nomChambre = form.non_chambres.value
+    console.log(nomChambre);
+    console.log(date);
+    console.log(nb_personnes);
+    if (date == "" || nb_personnes == "" || nomChambre == "") {
+        alert("Veuillez remplir tous les champs");
+        return;
+    }
+    else{
+        reservationChambre(form);
+    }
 }

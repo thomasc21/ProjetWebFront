@@ -68,7 +68,7 @@
 					<label for="nom">Nom</label>
 					<input type="text" id="nom" name="Nom de famille" required>
 					<label for="prenom">Prénom</label>
-					<input type="text" id="prenom" name="Prenom">
+					<input type="text" id="prenom" name="Prenom" required>
 				</p>
 				<p> 
 					<label for="email">Mail</label>
@@ -76,7 +76,7 @@
 					<label for="tel">Téléphone</label>
 					<input type="tel" id="tel" name="Téléphone" placeholder="Sans point, ni espaces" required>
 				</p>
-				<select id="non_chambres" name="nom_chambres">
+				<select id="non_chambres" name="nom_chambres" required>
 					<option value="La Calade">La Calade</option>
 					<option value="Les Lucioles">Les Lucioles</option>
 					<option value="Les Myrtes">Les Myrtes</option>
@@ -94,8 +94,8 @@
 				<p>
 					<input type="checkbox" id="politique_confindentialité" name="politique de confindentialité" required>
 					En cochant cette case, vous acceptez notre <a href="confidencialité.html">politique de confidencialité</a>
-				</p>
-					<input type="button" value="Envoyer" onclick="reservationChambre(this.form)">
+			
+					<input type="button" onclick="checkValue(this.form)" value="Envoyer" >
 			
 			</Fieldset>
 		</form>	
