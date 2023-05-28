@@ -26,18 +26,6 @@
 				</tr>
 			</table>
 		</div>
-		<script>
-		//---------- get velo --------------------------
-		const element = document.querySelector('.EnteteTableauVelo');
-			fetch('http://localhost:8000/velo')
-			.then(response => response.json())
-			.then(data => {
-				data.forEach(post => {
-					element.insertAdjacentHTML('afterend', `<tr> <td>${post.NomVelo}</td> <td>${post.PrixVelo}</td> </tr>`);
-			
-				});
-			});
-		</script>
 	<nav>
 		<ul>
 			<li><a href="legal.html">Mentions légales</a></li>
@@ -46,4 +34,6 @@
 	</nav>
 </body>
 <script src="./js/myScript.js"></script>
+
+<script src="./js/velo.js"></script>
 </html>

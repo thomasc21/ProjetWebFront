@@ -100,17 +100,6 @@
 			</Fieldset>
 		</form>	
 	</div>
-	<script>
-		//----------get chambre ------------------------
-		const element = document.querySelector('.EnteteTableauChambre');
-			fetch('http://localhost:8000/chambre')
-			.then(response => response.json())
-			.then(data => {
-				data.forEach(post => {
-					element.insertAdjacentHTML('afterend', `<tr> <td>${post.NomChambre}</td> <td>${post.TypeChambre}</td> <td>${post.PrixChambre}</td> </tr>`);
-			});
-		});
-		</script>
 	<nav>
 		<ul>
 			<li><a href="legal.html">Mentions légales</a></li>
@@ -119,4 +108,5 @@
 	</nav>
 </body>
 <script src="./js/myScript.js"></script>
+<script src="./js/chambre.js"></script>
 </html>
