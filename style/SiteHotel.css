@@ -317,3 +317,22 @@ input[required]{
 
 
 }
+
+#reservationTable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#reservationTable th, #reservationTable td {
+  text-align: left;
+  padding: 8px;
+  color: white;
+}
+
+#reservationTable th {
+  background-color: darkred;
+}
+
+#reservationTable tr:nth-child(even) {
+  background-color: #7a0000;
+}
