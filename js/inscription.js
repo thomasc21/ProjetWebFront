@@ -1,5 +1,12 @@
 //--------- fonction isncrpition----------------
 //--------page inscription----------------------
+const form = document.getElementById("forminscription");
+const buttonform = document.getElementById("buttonform");
+
+buttonform.addEventListener("click", function (e) {
+    inscription(form);
+    e.preventDefault();
+});
 
 function inscription (form) {
     var idusers = form.idusers.value;
@@ -12,6 +19,10 @@ function inscription (form) {
           alert("Les mots de passe ne correspondent pas");
           return;
       }
+      else if (idusers == "" || password == "" || passwordValidate == "") {
+            alert("Veuillez remplir tous les champs");
+            return;
+        }
       else{
           fetch("http://localhost:8000/user/signup", {
           method: "POST",
@@ -22,7 +33,7 @@ function inscription (form) {
       }).then((response) => response.text())
           .then((responseText) => {
               alert(responseText);
-              window.location.href = "login.html";
+              window.location = "login";
           })
           .catch((error) => {
               console.error("foo: " + error)

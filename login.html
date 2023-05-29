@@ -8,30 +8,32 @@
 <body>
 	<nav>
 		<ul>
-			<li><a href="index.html">Accueil</a></li>
-			<li><a href="chambres.html">Nos chambres</a></li>
-			<li><a href="velo.html">Nos vélos</a></li>
-			<li  id = "lien-nav" ><a href="reservations.html">Réserver</a></li>
-			<li><a href="contact.html">Nous retrouver</a></li>
-            <li id="connexion"><a href="login.html" class="navConnexion" > Connexion </a></li>
-			<li id="deconnexion"><a href="logout.html"> Déconnexion </a></li>
+			<li><a href="index">Accueil</a></li>
+			<li><a href="chambres">Nos chambres</a></li>
+			<li><a href="velo">Nos vélos</a></li>
+			<li  id = "lien-nav" ><a href="reservations">Réserver</a></li>
+			<li><a href="contact">Nous retrouver</a></li>
+            <li id="connexion"><a href="login" class="navConnexion" > Connexion </a></li>
+			<li id="deconnexion"><a href="logout"> Déconnexion </a></li>
 		</ul>
 	</nav>	
-	<form >
-		<fieldset>
-		  <legend>Connexion</legend>
-		  <label for="login">Login</label>
-		  <input type="email" name="login" id="idusers" required>
-		  <label for="password">Mot de passe</label>
-		  <input type="password" name="password" id="password" required>
-		  <input type="button" value="Envoyer" class="envoyers" onclick="Authentification(this.form)">
-		  <a href="inscription.html">S'inscrire</a>
-		</fieldset>
+	<form class="form" id="formLogin">
+		  <p class="title">Connexion</p>
+		  <label for="login">
+			<input type="email" name="login" id="idusers" required>
+			<span>Email</span>
+		  </label>
+		  <label for="password">
+			<input type="password" name="password" id="password" required>
+			<span>Mot de passe</span>
+		  </label>
+		  <button type="button"  class="submit" id="buttonlogin"> Se connecter </button>
+		  <a href="inscription">S'inscrire</a>
 	  </form>
 	<nav>
 		<ul>
-			<li><a href="legal.html">Mentions légales</a></li>
-			<li><a href="confidentialite.html">Politique de confidentialité</a></li>
+			<li><a href="legal">Mentions légales</a></li>
+			<li><a href="confidentialite">Politique de confidentialité</a></li>
 		</ul>
 	</nav>
 </body>

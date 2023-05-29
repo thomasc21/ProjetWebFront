@@ -8,27 +8,35 @@
 <body>
 	<nav>
 		<ul>
-			<li><a href="index.html">Accueil</a></li>
-			<li><a href="chambres.html">Nos chambres</a></li>
-			<li><a href="velo.html">Nos vélos</a></li>
-			<li  id = "lien-nav" ><a href="reservations.html">Réserver</a></li>
-			<li><a href="contact.html">Nous retrouver</a></li>
-			<li id="connexion"><a href="login.html" class="navConnexion" > Connexion </a></li>
-			<li id="deconnexion"><a href="logout.html" class="navConnexion"> Déconnexion </a></li>
+			<li><a href="index">Accueil</a></li>
+			<li><a href="chambres">Nos chambres</a></li>
+			<li><a href="velo">Nos vélos</a></li>
+			<li  id = "lien-nav" ><a href="reservations">Réserver</a></li>
+			<li><a href="contact">Nous retrouver</a></li>
+			<li id="connexion"><a href="login" class="navConnexion" > Connexion </a></li>
+			<li id="deconnexion"><a href="logout" class="navConnexion"> Déconnexion </a></li>
 		</ul>
 	</nav>	
-	<h1> Vos réservation </h1>
-	<div id="reservations">
-
+	<form class="form" id="formPassword">
+		<p class="title">Change password </p>
+		<label>
+			<input required type="password" class="input" id="password">
+			<span>Password</span>
+		</label>
+		<label>
+			<input required type="password" class="input" id="password2">
+			<span>Confirm password</span>
+		</label>
+		<button type="button" class="submit" id="buttonpass">Change</button>
+	</form>
+	<div>
+		<button  class="submit" id="deconnexionButton" onclick="deconnexion()" style="margin-top: -10%;">Déconnexion</button>
 	</div>
-	<script>
-		
-	</script>
-	<button id="deconnexionButton" onclick="deconnexion()">Déconnexion</button>
+
 	<nav>
 		<ul>
-			<li><a href="legal.html">Mentions légales</a></li>
-			<li><a href="confidentialite.html">Politique de confidentialité</a></li>
+			<li><a href="legal">Mentions légales</a></li>
+			<li><a href="confidentialite">Politique de confidentialité</a></li>
 		</ul>
 	</nav>
 </body>

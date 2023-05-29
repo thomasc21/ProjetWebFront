@@ -1,5 +1,18 @@
 //--------- fonction authentification ----------
 //--------page login ---------------------------
+const form = document.getElementById("formLogin");
+const buttonauth = document.getElementById("buttonlogin");
+
+buttonauth.addEventListener("click", function (e) {
+  if (form.idusers.value == "" || form.password.value == "") {
+      alert("Veuillez remplir tous les champs");
+      return;
+  }
+  else{
+    Authentification(form);
+    e.preventDefault();
+  }
+});
 
 function Authentification (form) {
     var idusers = form.idusers.value;
@@ -33,7 +46,7 @@ function Authentification (form) {
       localStorage.setItem("token", token);
      // localStorage.setItem("idusers", idusers);
   
-      window.location = "http://localhost:4000/index.html";
+      window.location = "http://localhost:4000/index";
     })
     .catch((error) => {
       console.error("foo: " + error)
