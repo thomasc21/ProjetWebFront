@@ -1,9 +1,8 @@
 //--------- fonction authentification ----------
 //--------page login ---------------------------
 const form = document.getElementById("formLogin");
-const buttonauth = document.getElementById("buttonlogin");
 
-buttonauth.addEventListener("click", function (e) {
+form.addEventListener("submit", function (e) {
   if (form.idusers.value == "" || form.password.value == "") {
       alert("Veuillez remplir tous les champs");
       return;

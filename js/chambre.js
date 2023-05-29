@@ -10,6 +10,12 @@ fetch('http://localhost:8000/chambre')
 
 // ---------Reservation Chambre----------------
 // --------------------------------------------
+const form = document.getElementById('formReservationChambre');
+form.addEventListener("submit", function (e) {
+    checkValue(form);
+    e.preventDefault();
+});
+
 function reservationChambre(form){
     const nom = form.nom.value
     const prenom = form.prenom.value
@@ -55,6 +61,10 @@ function checkValue(form){
     console.log(nomChambre);
     console.log(date);
     console.log(nb_personnes);
+    if(form.politique_confindentialité.value == false){
+        alert("Veuillez accepter la politique de confidentialité");
+        return;
+    }
     if (date == "" || nb_personnes == "" || nomChambre == "" || mail == "" || tel == "" || nom == "" || prenom == "") {
         alert("Veuillez remplir tous les champs");
         return;

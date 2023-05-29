@@ -62,19 +62,28 @@
 	</div>
 
 	<div class="ReservationChambre">
-		<form  style="margin-left: 20px;">
-			<Fieldset>
+		<form class="form" id="formReservationChambre" style="margin-left: 20px; margin-top: 35%; display: grid;">
+			<p class="title"> Reservation d'une chambre</p>
 				<p> 
-					<label for="nom">Nom</label>
+					<label for="nom">
 					<input type="text" id="nom" name="Nom de famille" required>
-					<label for="prenom">Prénom</label>
+					<Span> Nom</Span>
+					</label>
+					<br>
+					<label for="prenom">
 					<input type="text" id="prenom" name="Prenom" required>
+					<Span> Prénom</Span>
+				</label>
 				</p>
 				<p> 
-					<label for="email">Mail</label>
+					<label for="email">
 					<input type="email" id="email" name="Email" required>
-					<label for="tel">Téléphone</label>
+					<Span> Email</Span>
+					</label>
+					<label for="tel">
 					<input type="tel" id="tel" name="Téléphone" placeholder="Sans point, ni espaces" required>
+					<Span> Téléphone</Span>
+					</label>
 				</p>
 				<select id="non_chambres" name="nom_chambres" required>
 					<option value="La Calade">La Calade</option>
@@ -84,20 +93,24 @@
 					<option value="Les Oliviers">Les Oliviers</option>
 				</select>
 				<p>
-					<label for="date_arrivée">Date d'arrivée</label>
+					<label for="date_arrivée"></label>
 					<input type="date" id="date_arrivée" name="Date d'arrivée" required>
+					<Span> Date d'arrivée</Span>
+					</label>
 				</p>
 				<p>
-					<label for="nb_personnes">Nombre de personnes</label>
+					<label for="nb_personnes">
+					<Span> Nombre de personnes</Span>
 					<input type="number" id="nb_personnes" name="Nombre de personnes" min="1" max="4">
+					</label>
+				
 				</p>		
 				<p>
 					<input type="checkbox" id="politique_confindentialité" name="politique de confindentialité" required>
 					En cochant cette case, vous acceptez notre <a href="confidencialité">politique de confidencialité</a>
 			
-					<input type="button" onclick="checkValue(this.form)" value="Envoyer" >
-			
-			</Fieldset>
+					<button type="submit"  class="submit" id="buttonformReservationChambre"> Reserver</button>
+				</p>
 		</form>	
 	</div>
 	<nav>

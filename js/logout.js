@@ -5,10 +5,9 @@ function deconnexion(){
     window.location= "index";
 }
 const form = document.getElementById("formPassword");
-const buttonpass = document.getElementById("buttonpass");
 const out = document.getElementById("deconnexionButton");
 
-buttonpass.addEventListener("click", function (e) {
+form.addEventListener("submit", function (e) {
     if (form.password.value == "") {
         alert("Veuillez remplir tous les champs");
         return;

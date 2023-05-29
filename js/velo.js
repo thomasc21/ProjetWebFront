@@ -9,14 +9,21 @@
         });
     });
 
+
     // ---------Reservation Velo----------------
-// --------------------------------------------
+    // -----------------------------------------
+    const form = document.getElementById('formReservationVelo');
+    form.addEventListener("submit", function (e) {
+        checkValue(form);
+        e.preventDefault();
+    });
+    
 function reservationVelo(form){
     const nom = form.nom.value
     const prenom = form.prenom.value
     const email = form.email.value
     const tel = form.tel.value
-    const nomVelo = form.non_chambres.value
+    const nomVelo = form.non_velos.value
     console.log(nomVelo);
     const date = form.date_arrivée.value
     //console.log(nom);
@@ -47,12 +54,13 @@ function checkValue(form){
     const nom = form.nom.value
     const prenom = form.prenom.value
     const date = form.date_arrivée.value
-    const nb_personnes = form.nb_personnes.value
-    const nomVelo = form.non_chambres.value
-    const mail = form.mail.value
+    const nomVelo = form.non_velos.value
+    const mail = form.email.value
     const tel = form.tel.value
-    console.log(nomVelo);
-    console.log(date);
+    if(form.politique_confindentialité.value == false){
+        alert("Veuillez accepter la politique de confidentialité");
+        return;
+    }
     if (date == "" || nomVelo == "" || mail == "" || tel == "" || nom == "" || prenom == "") 
      {
         alert("Veuillez remplir tous les champs");

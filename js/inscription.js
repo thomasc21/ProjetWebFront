@@ -1,9 +1,9 @@
 //--------- fonction isncrpition----------------
 //--------page inscription----------------------
 const form = document.getElementById("forminscription");
-const buttonform = document.getElementById("buttonform");
 
-buttonform.addEventListener("click", function (e) {
+
+form.addEventListener("submit", function (e) {
     inscription(form);
     e.preventDefault();
 });

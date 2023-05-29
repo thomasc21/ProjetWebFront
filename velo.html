@@ -11,7 +11,7 @@
 		<ul>
 			<li><a href="index">Accueil</a></li>
 			<li><a href="chambres">Nos chambres</a></li>
-			<li><a href="velo" class="navVelo">Nos vélos</a></li>
+			<li><a href="velo">Nos vélos</a></li>
 			<li id = "lien-nav" ><a href="reservations">Réserver</a></li>
 			<li><a href="contact">Nous retrouver</a></li>
 			<li id="connexion"><a href="login"> Connexion </a></li>
@@ -26,7 +26,51 @@
 				</tr>
 			</table>
 		</div>
-	<nav>
+		<div class="ReservationVelo">
+			<form class="form" id="formReservationVelo" style="margin-left: 20px; margin-top: 35%; display: grid;">
+				<p class="title"> Reservation d'un vélo</p>
+					<p> 
+						<label for="nom">
+						<input type="text" id="nom" name="Nom de famille" required>
+						<Span> Nom</Span>
+						</label>
+						<br>
+						<label for="prenom">
+						<input type="text" id="prenom" name="Prenom" required>
+						<Span> Prénom</Span>
+					</label>
+					</p>
+					<p> 
+						<label for="email">
+						<input type="email" id="email" name="Email" required>
+						<Span> Email</Span>
+						</label>
+						<label for="tel">
+						<input type="tel" id="tel" name="Téléphone" placeholder="Sans point, ni espaces" required>
+						<Span> Téléphone</Span>
+						</label>
+					</p>
+					<select id="non_velos" name="nom_velos" required>
+						<option value="VTC Enfant">VTC Enfant</option>
+						<option value="VTC Adulte">VTC Adulte</option>
+						<option value="VTT Enfant">VTT Enfant</option>
+						<option value="VTT Adulte">VTT Adulte</option>
+					</select>
+					<p>
+						<label for="date_arrivée"></label>
+						<input type="date" id="date_arrivée" name="Date d'arrivée" required>
+						<Span> Date de la réservation</Span>
+						</label>
+					</p>	
+					<p>
+						<input type="checkbox" id="politique_confindentialité" name="politique de confindentialité" required>
+						En cochant cette case, vous acceptez notre <a href="confidencialité">politique de confidencialité</a>
+				
+						<button type="submit"  class="submit" value="submit" id="buttonformReservationVelo"> Reserver</button>
+					</p>
+			</form>	
+		</div>
+		<nav>
 		<ul>
 			<li><a href="legal">Mentions légales</a></li>
 			<li><a href="confidentialite">Politique de confidentialité</a></li>
