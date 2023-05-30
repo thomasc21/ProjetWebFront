@@ -84,7 +84,7 @@ function deleteReservationChambre (form) {
 
 //----------get ReservationVelo ------------------------
 const element2 = document.querySelector('.MesReservationVelo');
-await fetch('https://aubergepeillon.cluster-ig3.igpolytech.fr/reservationVelo/getReservation', {
+fetch('https://aubergepeillon.cluster-ig3.igpolytech.fr/reservationVelo/getReservation', {
     method: "GET",
     headers: {
         "Content-Type": "application/json",
