@@ -1,12 +1,7 @@
 
 //----------get Reservationchambre ------------------------
-document.addEventListener('DOMContentLoaded', () => {
-    getReservationChambre();
-    getReservationVelo();
-});
-async function getReservationChambre() {
-    const element = document.querySelector('.MesReservationChambre');
- await fetch('https://aubergepeillon.cluster-ig3.igpolytech.fr/reservationChambre/getReservation', {
+const element = document.querySelector('.MesReservationChambre');
+fetch('https://aubergepeillon.cluster-ig3.igpolytech.fr/reservationChambre/getReservation', {
     method: "GET",
     headers: {
         "Content-Type": "application/json",
@@ -60,7 +55,6 @@ async function getReservationChambre() {
         );
 });
 });
-}
 
 function deleteReservationChambre (form) {
     try{
@@ -90,9 +84,8 @@ function deleteReservationChambre (form) {
 }
 
 //----------get ReservationVelo ------------------------
-async function getReservationVelo() {
 const element2 = document.querySelector('.MesReservationVelo');
-await fetch('https://aubergepeillon.cluster-ig3.igpolytech.fr/reservationVelo/getReservation', {
+fetch('https://aubergepeillon.cluster-ig3.igpolytech.fr/reservationVelo/getReservation', {
     method: "GET",
     headers: {
         "Content-Type": "application/json",
@@ -142,7 +135,7 @@ await fetch('https://aubergepeillon.cluster-ig3.igpolytech.fr/reservationVelo/ge
         `);
 });
 });
-}
+
 
 function deleteReservationVelo (form) {
     const date = form.date.value;
