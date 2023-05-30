@@ -16,7 +16,7 @@ form.addEventListener("submit", function (e) {
         alert("Les mots de passe ne correspondent pas");
         return;
     }
-    fetch("http://localhost:8000/user/password", {
+    fetch("https://aubergepeillon.cluster-ig3.igpolytech.fr/user/password", {
         'method': 'put',
         'headers': {
             authorization: "Bearer " + localStorage.getItem("token"),

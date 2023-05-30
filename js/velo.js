@@ -1,6 +1,6 @@
 	//---------- get velo --------------------------
     const element = document.querySelector('.EnteteTableauVelo');
-    fetch('http://localhost:8000/velo')
+    fetch('https://aubergepeillon.cluster-ig3.igpolytech.fr/velo')
     .then(response => response.json())
     .then(data => {
         data.forEach(post => {
@@ -27,7 +27,7 @@ function reservationVelo(form){
     console.log(nomVelo);
     const date = form.date_arrivée.value
     //console.log(nom);
-    fetch("http://localhost:8000/reservationVelo/add", {
+    fetch("https://aubergepeillon.cluster-ig3.igpolytech.fr/reservationVelo/add", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

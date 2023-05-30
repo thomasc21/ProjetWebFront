@@ -1,6 +1,6 @@
 //----------get chambre ------------------------
 const element = document.querySelector('.EnteteTableauChambre');
-fetch('http://localhost:8000/chambre')
+fetch('https://aubergepeillon.cluster-ig3.igpolytech.fr/chambre')
 .then(response => response.json())
 .then(data => {
     data.forEach(post => {
@@ -26,7 +26,7 @@ function reservationChambre(form){
     const date = form.date_arrivée.value
     const nb_personnes = form.nb_personnes.value    
     //console.log(nom);
-    fetch("http://localhost:8000/reservationChambre/add", {
+    fetch("https://aubergepeillon.cluster-ig3.igpolytech.fr/reservationChambre/add", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

@@ -24,7 +24,7 @@ function inscription (form) {
             return;
         }
       else{
-          fetch("http://localhost:8000/user/signup", {
+          fetch("https://aubergepeillon.cluster-ig3.igpolytech.fr/user/signup", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"

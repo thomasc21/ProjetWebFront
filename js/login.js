@@ -19,7 +19,7 @@ function Authentification (form) {
    // var passwordHash = bcrypt.hashSync(password, 10);
     //console.log(idusers);
     //console.log(password);
-      fetch("http://localhost:8000/user/login", {
+      fetch("https://aubergepeillon.cluster-ig3.igpolytech.fr/user/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
