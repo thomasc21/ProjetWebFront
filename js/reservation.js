@@ -1,6 +1,6 @@
 //----------get Reservationchambre ------------------------
 const element = document.querySelector('.MesReservationChambre');
-await fetch('https://aubergepeillon.cluster-ig3.igpolytech.fr/reservationChambre/getReservation', {
+fetch('https://aubergepeillon.cluster-ig3.igpolytech.fr/reservationChambre/getReservation', {
     method: "GET",
     headers: {
         "Content-Type": "application/json",
