@@ -1,4 +1,3 @@
-const { get } = require("mongoose");
 
 //----------get Reservationchambre ------------------------
 document.addEventListener('DOMContentLoaded', () => {
