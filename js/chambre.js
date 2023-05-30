@@ -37,7 +37,7 @@ function reservationChambre(form){
     }).then((response) => response.text())
         .then((responseText) => {
             alert(responseText);
-            window.location = "http://localhost:4000/index";
+            window.location = "https://aubergepeillon.onrender.com/index";
 
            
         }

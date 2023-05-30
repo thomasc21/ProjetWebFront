@@ -45,7 +45,7 @@ function Authentification (form) {
       localStorage.setItem("token", token);
      // localStorage.setItem("idusers", idusers);
   
-      window.location = "http://localhost:4000/index";
+      window.location = "https://aubergepeillon.onrender.com/index";
     })
     .catch((error) => {
       console.error("foo: " + error)
